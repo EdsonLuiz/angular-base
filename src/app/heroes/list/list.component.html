@@ -1,0 +1,16 @@
+<p>list of heroes!</p>
+
+<ul>
+  <li *ngFor="let hero of heroes; let i = index">{{i}} - {{hero}}</li>
+</ul>
+
+<div *ngIf="lastHeroDeleted; else noAction">
+  <h3>Last hero deleted</h3>
+  <p>{{lastHeroDeleted}}</p>
+</div>
+
+<ng-template #noAction>
+  <h3>No action</h3>
+</ng-template>
+
+<button (click)="handleDelete()">delete</button>
